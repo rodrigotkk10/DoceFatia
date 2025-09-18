@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doce Fatia</title>
+    <!-- Importando as fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* CSS (Estilos da Página ) */
+        :root {
+            --cor-principal: #ffb6c1; /* Rosa claro */
+            --cor-secundaria: #ffa07a; /* Salmão */
+            --cor-destaque: #ff69b4; /* Rosa choque */
+            --cor-texto: #5c3c3c;
+            --cor-fundo: #fff5f5;
+            --cor-branco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--cor-principal), var(--cor-secundaria));
+            padding: 2rem 1rem;
+            text-align: center;
+            color: var(--cor-branco);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        nav button {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--cor-branco);
+            border: 1px solid var(--cor-branco);
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        nav button:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        nav button.active {
+            background: var(--cor-branco);
+            color: var(--cor-destaque);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--cor-branco);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card h3 {
+            font-size: 1.4em;
+            color: var(--cor-destaque);
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.95em;
+            line-height: 1.5;
+            color: var(--cor-texto);
+        }
+
+        footer {
+            background: var(--cor-principal);
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 40px;
+            color: var(--cor-branco);
+        }
+        
+        .social-icons a {
+            margin: 0 15px;
+            color: var(--cor-branco);
+            font-size: 1.8em;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            color: var(--cor-fundo);
+            transform: scale(1.2);
+        }
+        
+        footer p {
+            margin-top: 1rem;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+            nav button {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Doce Fatia</h1>
+        <nav id="filter-nav">
+            <!-- Os botões de filtro serão gerados pelo JavaScript -->
+        </nav>
+    </header>
+
+    <main id="product-container">
+        <!-- Os cards dos produtos serão gerados pelo JavaScript -->
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <!-- IMPORTANTE: Troque '#' pelos links das suas redes sociais -->
+            <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <!-- IMPORTANTE: Troque 'SEUNUMERO' pelo número de WhatsApp (ex: 5521999998888) -->
+            <a href="https://wa.me/55SEUNUMERO" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>&copy; 2025 Doce Fatia. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // JavaScript (Lógica da Página )
+
+        // --- PASSO 1: LISTA DE PRODUTOS ---
+        // Adicione ou edite seus produtos aqui.
+        // Para usar suas próprias imagens, salve-as na mesma pasta do GitHub
+        // e troque o 'src' pelo nome do arquivo (ex: 'minha-torta.jpg').
+        const products = [
+            {
+                category: 'torta',
+                // IMPORTANTE: Troque o 'src' pela sua imagem
+                src: 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FrZXx8fHx8fDE3MjY2NzU1MjU&ixlib=rb-4.0.3&q=80&w=1080',
+                alt: 'Torta de Morango',
+                title: 'Torta de Morango',
+                description: 'Massa crocante, creme de confeiteiro suave e morangos frescos.'
+            },
+            {
+                category: 'fatia',
+                src: 'https://images.unsplash.com/photo-158911-4042-839433412a05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FrZSUyMHNsaWNlfHx8fHx8MTcyNjY3NTU1NA&ixlib=rb-4.0.3&q=80&w=1080',
+                alt: 'Fatia Red Velvet',
+                title: 'Fatia Red Velvet',
+                description: 'Aveludada fatia de bolo Red Velvet com cobertura de cream cheese.'
+            },
+            {
+                category: 'brownie',
+                src: 'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YnJvd25pZXx8fHx8fDE3MjY2NzU1Nzc&ixlib=rb-4.0.3&q=80&w=1080',
+                alt: 'Brownie de Chocolate',
+                title: 'Brownie com Nozes',
+                description: 'Brownie denso e chocolatudo, com pedaços de nozes crocantes.'
+            },
+            {
+                category: 'copo',
+                src: 'https://images.unsplash.com/photo-1574085733264-96a331ea9d1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGVzc2VydCUyMGN1cHx8fHx8fDE3MjY2NzU2MDM&ixlib=rb-4.0.3&q=80&w=1080',
+                alt: 'Copo da Felicidade',
+                title: 'Copo da Felicidade',
+                description: 'Camadas de creme, brownie e morangos frescos para comer de colher.'
+            },
+            {
+                category: 'bolo',
+                src: 'https://images.unsplash.com/photo-1627485885233-26543a890412?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FrZSUyMGphcnx8fHx8fDE3MjY2NzU2MjY&ixlib=rb-4.0.3&q=80&w=1080',
+                alt: 'Bolo no Pote',
+                title: 'Bolo de Cenoura no Pote',
+                description: 'Bolo de cenoura fofinho com uma generosa camada de brigadeiro.'
+            },
+            {
+                category: 'torta',
+                src: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2hvY29sYXRlJTIwY2FrZXx8fHx8fDE3MjY2NzU2NDk&ixlib=rb-4.0.3&q=80&w=1080',
+                alt: 'Torta de Chocolate',
+                title: 'Torta Brigadeirão',
+                description: 'Uma explosão de chocolate para os verdadeiros chocólatras.'
+            }
+        ];
+
+        // --- PASSO 2: CÓDIGO QUE FAZ A PÁGINA FUNCIONAR ---
+        // (Normalmente não precisa mexer aqui )
+        document.addEventListener('DOMContentLoaded', () => {
+            const productContainer = document.getElementById('product-container');
+            const filterNav = document.getElementById('filter-nav');
+
+            // Extrai categorias únicas e cria os botões de filtro
+            const categories = ['Todos', ...new Set(products.map(p => p.category))];
+            const categoryNames = {
+                'Todos': 'Todos',
+                'torta': 'Tortas',
+                'fatia': 'Fatias',
+                'brownie': 'Brownies',
+                'copo': 'Copo da Felicidade',
+                'bolo': 'Bolo no Pote'
+            };
+
+            categories.forEach(category => {
+                const button = document.createElement('button');
+                const categoryKey = category === 'Todos' ? 'all' : category;
+                button.textContent = categoryNames[category] || category;
+                button.dataset.category = categoryKey;
+                if (category === 'Todos') {
+                    button.classList.add('active');
+                }
+                button.addEventListener('click', () => filterCategory(categoryKey));
+                filterNav.appendChild(button);
+            });
+
+            // Função para renderizar os produtos
+            function renderProducts(filter = 'all') {
+                productContainer.innerHTML = '';
+                const filteredProducts = filter === 'all' 
+                    ? products 
+                    : products.filter(p => p.category === filter);
+
+                filteredProducts.forEach(product => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <img src="${product.src}" alt="${product.alt}">
+                        <div class="card-content">
+                            <div>
+                                <h3>${product.title}</h3>
+                                <p>${product.description}</p>
+                            </div>
+                        </div>
+                    `;
+                    productContainer.appendChild(card);
+                });
+            }
+
+            // Função para filtrar e atualizar a interface
+            window.filterCategory = function(category) {
+                renderProducts(category);
+                
+                // Atualiza o botão ativo
+                document.querySelectorAll('#filter-nav button').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.category === category);
+                });
+            }
+
+            // Renderiza todos os produtos inicialmente
+            renderProducts();
+        });
+    </script>
+
+</body>
+</html>
